@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: Cambria, Georgia, "Times New Roman", serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #ffffff;
+    color: #050505;
+    overflow-x: hidden;
+  }
+
+  * {
+    font-family: Cambria, Georgia, "Times New Roman", serif;
+  }
+}
+
+@layer utilities {
+  .font-cambria {
+    font-family: Cambria, Georgia, "Times New Roman", serif;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f3f3f3;
+}
+::-webkit-scrollbar-thumb {
+  background: #c8102e;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8b0000;
+}
+
+/* Focus states */
+:focus-visible {
+  outline: 2px solid #c8102e;
+  outline-offset: 2px;
+}
+
+/* Hide scrollbar for mobile menu */
+.no-scroll {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
